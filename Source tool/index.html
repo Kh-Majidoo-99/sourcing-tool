@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MPN Normalizer Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="glass-container">
+        <header>
+          <h1>MPN Normalizer</h1>
+          <p>Merge multiple XLS/CSV files into one master file.</p>
+        </header>
+
+        <div id="drop-zone" class="drop-zone">
+          <div class="icon">📂</div>
+          <p>Drag & Drop files here</p>
+          <span class="sub-text">or click to browse</span>
+          <input
+            type="file"
+            id="file-input"
+            multiple
+            accept=".csv, .xls, .xlsx"
+            hidden
+          />
+        </div>
+
+        <div id="file-list" class="file-list"></div>
+
+        <div class="actions">
+          <div class="status-message" id="status-message">Ready</div>
+          <button id="process-btn" disabled>Normalize & Export All</button>
+          <button id="condensed-btn" disabled style="background: var(--primary-hover); margin-top: 0.5rem;">Export Condensed (Important Only)</button>
+          <button id="headers-btn" disabled style="background: transparent; border: 1px solid var(--primary); color: var(--primary); margin-top: 0.5rem;">Export All Headers (TXT)</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
